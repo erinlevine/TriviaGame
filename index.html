@@ -1,0 +1,51 @@
+<!-- * You'll create a trivia form with multiple choice or true/false options (your choice).
+
+* The player will have a limited amount of time to finish the quiz. 
+
+  * The game ends when the time runs out. The page will reveal the number of questions that players answer correctly and incorrectly.
+
+* Don't let the player pick more than one answer per question.
+
+* Don't forget to include a countdown timer. -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Trivia Game!</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1><span>Totally Tubular Trivia!</span></h1>
+			<div class="container">
+				
+				<div id="timeRemaining">
+					<h2>Time Remaining: <span class="time"></span></h2>
+				</div>
+				<p id="question" class="showQuestion"></p>
+				<tr>
+					<span id="question1">
+						<h3>Who was our first President of the United States?</h3>
+					</span>
+					<td>
+						<input type="radio" name="q1" value="false"> Abraham Lincoln</br>
+					</td>
+					<td>
+						<input type="radio" name="q1" value="true"> George Washington</br>
+					</td>
+					<td>
+						<input type="radio" name="q1" value="false"> John F. Kennedy</br>
+					</td>
+					<td>
+						<input type="radio" name="q1" value="false"> Fred Flintsone</br>
+					</td>
+
+					<span id="question2">
+						<h3>Blah blah</h3>
+				</tr>
+				
+				<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+				<script type="text/javascript" src="assets/javascript/app.js"></script>
+			</body>
+		</html>
