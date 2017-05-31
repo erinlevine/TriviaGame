@@ -1,0 +1,18 @@
+body {
+	background-image: url("https://cdn.pixabay.com/photo/2016/03/27/19/49/nature-1283976_1280.jpg");
+	background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    margin-left: 35px;
+}
+
+#wrapper {
+	background-color: white;
+    margin-right: 55%;
+    padding-left: 3%;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 10px;
+    margin-top: 5%;
+    border-style: solid;
+}
