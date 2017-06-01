@@ -15,7 +15,6 @@ var number = 90;
 
 var countDown;
 
-var unanswered;
 
 //"Hacky" way to check how many true radio buttons are checked off in order to tally the score
 // var trueRadios = $("input:radio[value=true]:checked");
@@ -61,10 +60,16 @@ function submit(){
 		console.log(trueRadios);
 		trueRadios = trueRadios.length;
 		$("#correctAnswers").html(trueRadios);
-	var falseRadios = $("input:radio[value=false]:checked");
+	var falseRadios = $("input:radio[value=false]:checked"); 
 		console.log(falseRadios);
 		falseRadios = falseRadios.length;
 		$("#incorrectAnswers").html(falseRadios);
+
+	//Trying to figure out how to get it to generate unanswered radios
+	var unanswered = $("input:radio[value=null]");
+		console.log(unanswered);
+		unanswered = unanswered.length;
+		$("#unansweredQuestions").html(unanswered);
 }
 
 
