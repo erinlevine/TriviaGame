@@ -24,6 +24,7 @@ var trueRadios = $("input:radio[value=true]:checked");
 
 
 function start(){
+	$("#start").attr("disabled", true);
 	countDown = setInterval(decrement, 1000);
 	console.log(countDown);
 }
@@ -34,9 +35,10 @@ function decrement(){
 
 	$("#time").text(number);
 
-	if(countDown === 0){
+	if(number <= 0){
 		stop();
 		alert("Sorry! Your time is up!");
+		$("#start").attr("disabled", false);
 	}
 }
 
