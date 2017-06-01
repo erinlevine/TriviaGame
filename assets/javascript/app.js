@@ -16,6 +16,11 @@ var number = 90;
 var countDown;
 
 $("#start").on("click", start);
+$("#time").text(number);
+
+//"Hacky" way to check how many true radio buttons are checked off in order to tally the score
+var trueRadios = $("input:radio[value=true]:checked");
+	console.log(trueRadios.length);
 
 
 function start(){
@@ -24,9 +29,10 @@ function start(){
 }
 
 function decrement(){
+	console.log(number);
 	number--;
 
-	$("#time").html("<h2>" + countDown + "</h2>");
+	$("#time").text(number);
 
 	if(countDown === 0){
 		stop();
@@ -38,6 +44,6 @@ function stop(){
 	clearInterval(countDown);
 }
 
-start();
+
 
 
