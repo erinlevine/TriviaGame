@@ -1,24 +1,6 @@
-// Pseudocode: 
-
-// Submit button to clear div and put in:
-// 	- All done!
-// 	- Correct Answers: 
-// 	- Incorrect Answers:
-// 	- Unanswered: 
-
-// Check value for each question to see if it is true (correct) or false (incorrect)
-
-//---------------
-
-
 var number = 90;
 
 var countDown;
-
-
-//"Hacky" way to check how many true radio buttons are checked off in order to tally the score
-// var trueRadios = $("input:radio[value=true]:checked");
-// 	console.log(trueRadios.length);
 
 $("#start").on("click", start);
 $("#time").text(number);
@@ -55,21 +37,30 @@ function stop(){
 function submit(){
 	//When user clicked submit, the correct answers, incorrect answers, and unansweres questions pop up.
 	$("#answers").css("display", "block");
+	stop();
 	//HTML needs to change to those variables. 
 	var trueRadios = $("input:radio[value=true]:checked");
 		console.log(trueRadios);
 		trueRadios = trueRadios.length;
 		$("#correctAnswers").html(trueRadios);
+		
 	var falseRadios = $("input:radio[value=false]:checked"); 
 		console.log(falseRadios);
 		falseRadios = falseRadios.length;
 		$("#incorrectAnswers").html(falseRadios);
 
-	//Trying to figure out how to get it to generate unanswered radios
-	var unanswered = $("input:radio[value=null]");
-		console.log(unanswered);
-		unanswered = unanswered.length;
-		$("#unansweredQuestions").html(unanswered);
+	var unansweredCount = 0; // We'll increment this for each group of radio button where none are checked
+	for (var i = 1; i <= 10; i++){ // 10 is the number of questions--with 3 radio buttons per question
+		var unanswered = $("input:radio[name=q" + i + "]");	 // Here we're using the i variable to iterate over each question group
+		for (var j = 0; j < unanswered.length; j++) { // We'll use j to loop over the radio buttons *within* each question
+			if (unanswered[j].checked) { // IF we find any checked radio button: 
+				break; // THEN we break out of the loop (cuz it was answered)
+			} else if (j === unanswered.length - 1){ // IF we're on the last radio button AND the IF above is false (not checked)
+				unansweredCount++; // THEN we increment unansweredCount by 1!
+			}
+		}
+		$("#unansweredQuestions").html(unansweredCount);
+	}
 }
 
 
