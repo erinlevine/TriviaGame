@@ -13,4 +13,4 @@ Objectives:
 
 To read about how and why I created this simple trivia game, check out my blog <a href="http://www.exactlyerin.com/week-3-coding-really-just-making-games-right/">here!</a>
 
-<a href="http://www.exactlyerin.com/wp-content/uploads/2017/06/Screen-Shot-2017-06-08-at-5.10.36-PM.png">
+<img src="http://www.exactlyerin.com/wp-content/uploads/2017/06/Screen-Shot-2017-06-08-at-5.10.36-PM.png">
